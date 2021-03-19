@@ -66,9 +66,7 @@ module.exports = {
         start_process: true,
         port: 9515,
         server_path: Services.chromedriver ? Services.chromedriver.path : '',
-        cli_args: [
-          // --verbose
-        ],
+        cli_args: ['--no-sandbox'],
       },
     },
   },
