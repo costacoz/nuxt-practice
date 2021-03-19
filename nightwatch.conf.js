@@ -35,14 +35,21 @@ module.exports = {
       },
 
       desiredCapabilities: {
-        browserName: 'chrome',
+        browserName: 'firefox',
+        acceptInsecureCerts: true,
       },
 
       webdriver: {
         start_process: true,
-        server_path: require('chromedriver').path,
-        port: 9515,
-        cli_args: ['--no-sandbox'],
+        server_path: require('geckodriver').path,
+        cli_args: ['--log', 'debug'],
+        port: 4444,
+      },
+
+      loggingPrefs: {
+        driver: 'INFO',
+        server: 'OFF',
+        browser: 'INFO',
       },
     },
 
@@ -66,7 +73,9 @@ module.exports = {
         start_process: true,
         port: 9515,
         server_path: Services.chromedriver ? Services.chromedriver.path : '',
-        cli_args: ['--no-sandbox'],
+        cli_args: [
+          // --verbose
+        ],
       },
     },
   },
