@@ -7,6 +7,8 @@ module.exports = {
   // if this is not specified, the test source must be passed as the second argument to the test runner.
   src_folders: ['test/e2e/specs'],
 
+  unit_tests_mode: true,
+
   exclude: [],
 
   // See https://nightwatchjs.org/guide/working-with-page-objects/
@@ -84,7 +86,7 @@ module.exports = {
   },
 }
 
-function loadServices() {
+function loadServices () {
   try {
     Services.seleniumServer = require('selenium-server')
   } catch (err) {}
